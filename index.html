@@ -14,10 +14,11 @@
     <link rel="shortcut icon" href="assets/logo.png">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
     <style>
       :root { --primary:#0ea5e9; --secondary:#22c55e; --building:#a855f7; --rental:#f59e0b; --foreground:#0f172a; }
-      body { font-family: system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji"; color: var(--foreground); }
+      body { font-family: system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji"; color: var(--foreground); opacity: 0; transition: opacity .6s ease; }
       .bg-hero { background-image: url('assets/sule.jpg'); background-size: cover; background-position: center; position: relative; }
       .bg-hero::before { content:""; position:absolute; inset:0; background:rgba(0,0,0,.6); }
       .hero-content { position:relative; z-index:1; }
@@ -32,6 +33,11 @@
       .section-pad { padding-top: 5rem; padding-bottom:5rem; }
       .category-dot { width:8px; height:8px; border-radius: 50%; display:inline-block; margin-right: .5rem; }
       .whitespace-pre-line { white-space: pre-line; }
+      /* Card + image hover animations */
+      .card { transition: transform .25s ease, box-shadow .25s ease; }
+      .card:hover { transform: translateY(-6px); box-shadow: 0 14px 40px rgba(2,6,23,.18); }
+      .card-img-top, .card img { transition: transform .35s ease; }
+      .card:hover .card-img-top, .card:hover img { transform: scale(1.05); }
     </style>
   </head>
 
@@ -112,13 +118,13 @@
 
     <section id="products" class="section-pad" style="background: #f8fafc;">
       <div class="container">
-        <div class="text-center mb-5">
+        <div class="text-center mb-5" data-aos="fade-up">
           <h2 class="display-6 fw-bold">Our Products & Services</h2>
           <p class="fs-5 text-muted mx-auto" style="max-width: 48rem;">Discover our comprehensive range of hardware products and rental services, carefully selected to meet all your construction and maintenance needs.</p>
         </div>
 
         <div class="row g-4 mb-5">
-          <div class="col-md-6">
+          <div class="col-md-6" data-aos="fade-up">
             <div class="card h-100 shadow-soft">
               <div class="position-relative" style="height: 260px; overflow:hidden;">
                 <img src="assets/water-accessories.jpg" alt="Water Accessories" class="w-100 h-100" style="object-fit: cover;" />
@@ -134,12 +140,12 @@
                   <li><span class="category-dot gradient-water"></span>Plumbing Tools</li>
                   <li><span class="category-dot gradient-water"></span>Water Filters</li>
                 </ul>
-                <a class="btn btn-outline-primary w-100" data-scroll href="#contact">Learn More</a>
+                <a class="btn btn-outline-primary w-100" href="water-prod.html">Learn More</a>
               </div>
             </div>
           </div>
 
-          <div class="col-md-6">
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="card h-100 shadow-soft">
               <div class="position-relative" style="height: 260px; overflow:hidden;">
                 <img src="assets/matungi.jpg" alt="Electronic Accessories" class="w-100 h-100" style="object-fit: cover;" />
@@ -155,12 +161,12 @@
                   <li><span class="category-dot gradient-electronics"></span>Electrical Components</li>
                   <li><span class="category-dot gradient-electronics"></span>Batteries</li>
                 </ul>
-                <a class="btn btn-outline-success w-100" data-scroll href="#contact">Learn More</a>
+                <a class="btn btn-outline-success w-100" href="elect-prod.html">Learn More</a>
               </div>
             </div>
           </div>
 
-          <div class="col-md-6">
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
             <div class="card h-100 shadow-soft">
               <div class="position-relative" style="height: 260px; overflow:hidden;">
                 <img src="assets/building-materials.jpg" alt="Building Materials" class="w-100 h-100" style="object-fit: cover;" />
@@ -176,12 +182,12 @@
                   <li><span class="category-dot gradient-building"></span>Paint</li>
                   <li><span class="category-dot gradient-building"></span>Construction Tools</li>
                 </ul>
-                <a class="btn btn-outline-dark w-100" data-scroll href="#contact">Learn More</a>
+                <a class="btn btn-outline-dark w-100" href="build-prod.html">Learn More</a>
               </div>
             </div>
           </div>
 
-          <div class="col-md-6">
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
             <div class="card h-100 shadow-soft">
               <div class="position-relative" style="height: 260px; overflow:hidden;">
                 <img src="assets/rental-tools.jpg" alt="Rental Services" class="w-100 h-100" style="object-fit: cover;" />
@@ -197,13 +203,13 @@
                   <li><span class="category-dot gradient-rental"></span>Construction Tools</li>
                   <li><span class="category-dot gradient-rental"></span>Measuring Tools</li>
                 </ul>
-                <a class="btn btn-outline-warning w-100" data-scroll href="#contact">Learn More</a>
+                <a class="btn btn-outline-warning w-100" href="rental.html">Learn More</a>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="text-center text-white rounded-4 p-5 gradient-hero">
+        <div class="text-center text-white rounded-4 p-5 gradient-hero" data-aos="zoom-in">
           <h3 class="h2 mb-3">Need Something Specific?</h3>
           <p class="lead mb-4">Can't find what you're looking for? Our knowledgeable team is here to help you find the right products for your project.</p>
           <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center">
@@ -310,7 +316,7 @@
                   <div class="rounded-circle gradient-hero flex-shrink-0" style="width:48px;height:48px;"></div>
                   <div>
                     <div class="fw-semibold">Call Us</div>
-                    <div class="text-muted small">+255 773 220 509<br>+255 778 950 802</div>
+                    <div class="text-muted small">+255 773 110 509<br>+255 778 950 802</div>
                   </div>
                 </div>
               </div>
@@ -319,7 +325,7 @@
                   <div class="rounded-circle gradient-hero flex-shrink-0" style="width:48px;height:48px;"></div>
                   <div>
                     <div class="fw-semibold">Email Us</div>
-                    <div class="text-muted small">khamiarmshimba4@gmail.com</div>
+                    <div class="text-muted small">suleimanmshimba@gmail.com</div>
                   </div>
                 </div>
               </div>
@@ -440,8 +446,12 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script>
+      // Reveal body after load
+      window.addEventListener('load', function(){ document.body.style.opacity = '1'; AOS.init({ once: true, duration: 700, easing: 'ease-out-cubic' }); });
+
       document.querySelectorAll('[data-scroll]').forEach(function(el){
         el.addEventListener('click', function(e){
           const href = el.getAttribute('href') || '';
