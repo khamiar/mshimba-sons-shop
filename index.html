@@ -38,13 +38,46 @@
       .card:hover { transform: translateY(-6px); box-shadow: 0 14px 40px rgba(2,6,23,.18); }
       .card-img-top, .card img { transition: transform .35s ease; }
       .card:hover .card-img-top, .card:hover img { transform: scale(1.05); }
+      /* Dropdown menu styling */
+      .dropdown-menu { border: none; box-shadow: 0 4px 12px rgba(2,6,23,.15); }
+      .dropdown-item:hover { background-color: #f8fafc; }
+      .dropdown-item.active { background-color: #e0e7ff; color: var(--primary); font-weight: 500; }
+      /* WhatsApp floating button */
+      .whatsapp-float { position: fixed; width: 40px; height: 40px; bottom: 20px; left: 20px; background-color: #25d366; color: #FFF; border-radius: 50px; text-align: center; font-size: 30px; box-shadow: 2px 2px 10px rgba(0,0,0,0.3); z-index: 1000; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; text-decoration: none; }
+      .whatsapp-float:hover { background-color: #20ba5a; transform: scale(1.1); color: #FFF; }
+      .whatsapp-float svg { width: 25px; height: 25px; }
+      /* Tooltip for WhatsApp */
+      .whatsapp-float::after { content: "Contact Us"; position: absolute; left: 50px; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.8); color: #FFF; padding: 4px 8px; border-radius: 4px; font-size: 11px; white-space: nowrap; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
+      .whatsapp-float:hover::after { opacity: 1; }
+      /* Scroll to top button */
+      .scroll-to-top { position: fixed; width: 50px; height: 50px; bottom: 20px; right: 20px; background-color: var(--primary); color: #FFF; border-radius: 50px; text-align: center; font-size: 24px; box-shadow: 2px 2px 10px rgba(0,0,0,0.3); z-index: 999; display: none; align-items: center; justify-content: center; transition: all 0.3s ease; text-decoration: none; cursor: pointer; }
+      .scroll-to-top.show { display: flex; }
+      .scroll-to-top:hover { background-color: #0284c7; transform: translateY(-3px); color: #FFF; }
+      .scroll-to-top::after { content: "Back to Top"; position: absolute; right: 60px; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.8); color: #FFF; padding: 8px 12px; border-radius: 6px; font-size: 14px; white-space: nowrap; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
+      .scroll-to-top:hover::after { opacity: 1; }
+      /* Language globe positioning - left side, above WhatsApp */
+      .gtranslate_wrapper { position: fixed !important; bottom: 70px !important; left: 10px !important; right: auto !important; top: auto !important; z-index: 1000 !important; transform: scale(0.7) !important; transform-origin: bottom left !important; }
+      .gtranslate_wrapper * { position: relative !important; }
+      /* Tooltip for language globe - only on hover */
+      .gtranslate_wrapper::after { content: "Change Language"; position: absolute; left: 83px; top: 25%; transform: translateY(-50%); background: rgba(0,0,0,0.8); color: #FFF; padding: 8px 12px; border-radius: 6px; font-size: 14px; white-space: nowrap; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; z-index: 1001; }
+      .gtranslate_wrapper:hover::after { opacity: 1; }
     </style>
   </head>
 
   <body>
-<div class="gtranslate_wrapper"></div>
-<script>window.gtranslateSettings = {"default_language":"en","languages":["en","fr","it","es","tr","sw"],"globe_color":"#66aaff","wrapper_selector":".gtranslate_wrapper","horizontal_position":"right","vertical_position":"bottom"}</script>
-<script src="https://cdn.gtranslate.net/widgets/latest/globe.js" defer></script>
+    <div class="gtranslate_wrapper"></div>
+    <script>window.gtranslateSettings = {"default_language":"en","languages":["en","fr","it","es","tr","sw"],"globe_color":"#66aaff","wrapper_selector":".gtranslate_wrapper","horizontal_position":"left","vertical_position":"bottom"}</script>
+    <script src="https://cdn.gtranslate.net/widgets/latest/globe.js" defer></script>
+    <a href="https://wa.me/255652105404?text=Hi%20Mshimba%20Sons%20Shop%2C%20I%27m%20interested%20in%20your%20products%20and%20services." class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contact us on WhatsApp">
+      <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+      </svg>
+    </a>
+    <a href="#" class="scroll-to-top" id="scrollToTop" aria-label="Back to top">
+      <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width: 24px; height: 24px;">
+        <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+      </svg>
+    </a>
     <header class="bg-white border-bottom sticky-top shadow-sm">
       <nav class="navbar navbar-expand-lg navbar-light container py-3">
         <a class="navbar-brand d-flex align-items-center gap-2" href="#home" data-scroll>
@@ -61,7 +94,19 @@
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center gap-lg-3">
             <li class="nav-item"><a class="nav-link" data-scroll href="#home">Home</a></li>
             <li class="nav-item"><a class="nav-link" data-scroll href="#about">About</a></li>
-            <li class="nav-item"><a class="nav-link" data-scroll href="#products">Products</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="productsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Products</a>
+              <ul class="dropdown-menu" aria-labelledby="productsDropdown">
+                <li><a class="dropdown-item" data-scroll href="#products">All Products</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="water-prod.html">Water Accessories</a></li>
+                <li><a class="dropdown-item" href="elect-prod.html">Electronic Accessories</a></li>
+                <li><a class="dropdown-item" href="build-prod.html">Building Materials</a></li>
+                <li><a class="dropdown-item" href="rental.html">Rental Services</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" data-scroll href="#staff">Staff</a></li>
+            <li class="nav-item"><a class="nav-link" data-scroll href="#testimonials">Testimonials</a></li>
             <li class="nav-item"><a class="nav-link" data-scroll href="#contact">Contact</a></li>
             <li class="nav-item d-none d-lg-block ms-2">
               <a class="btn btn-primary" data-scroll href="#contact">Get Quote</a>
@@ -292,6 +337,103 @@
       </div>
     </section>
 
+    <section id="testimonials" class="section-pad">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="display-6 fw-bold">Customer Testimonials</h2>
+          <p class="fs-5 text-muted mx-auto" style="max-width: 48rem;">Hear from our satisfied customers about their experiences with Mshimba Sons Shop.</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-4" data-aos="fade-up">
+            <div class="card h-100 shadow-soft">
+              <div class="card-body">
+                <p class="text-muted">"Mshimba Sons Shop has been my go-to hardware store for years. Their selection of water accessories is unmatched, and the staff always provides excellent service."</p>
+                <div class="d-flex align-items-center gap-3 mt-4">
+                  <div class="rounded-circle gradient-hero flex-shrink-0" style="width:48px;height:48px;"></div>
+                  <div>
+                    <div class="fw-semibold">Amina J.</div>
+                    <small class="text-muted">Paje Resident</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>  
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="card h-100 shadow-soft">
+              <div class="card-body">
+                <p class="text-muted">"I rented tools from Mshimba Sons Shop for a construction project, and the equipment was top-notch. The rental process was smooth, and the staff was very helpful."</p>
+                <div class="d-flex align-items-center gap-3 mt-4">
+                  <div class="rounded-circle gradient-hero flex-shrink-0" style="width:48px;height:48px;"></div>
+                  <div>
+                    <div class="fw-semibold">David M.</div>
+                    <small class="text-muted">Local Contractor</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="card h-100 shadow-soft">
+              <div class="card-body">
+                <p class="text-muted">"The team at Mshimba Sons Shop helped me find the perfect electronic accessories for my home renovation. Their knowledge and customer service made all the difference."</p>
+                <div class="d-flex align-items-center gap-3 mt-4">
+                  <div class="rounded-circle gradient-hero flex-shrink-0" style="width:48px;height:48px;"></div>
+                  <div> 
+                    <div class="fw-semibold">Fatima S.</div>
+                    <small class="text-muted">Homeowner</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="staff" class="section-pad">
+      <!-- staff -->
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="display-6 fw-bold">Meet Our Team</h2>
+          <p class="fs-5 text-muted mx-auto" style="max-width: 48rem;">Our dedicated team is here to provide you with the best service and support for all your hardware needs.</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-4" data-aos="fade-up">
+            <div class="card h-100 shadow-soft text-center">
+              <div class="card-body">
+                <div class="rounded-circle gradient-hero mx-auto mb-3" style="width:96px;height:96px;"></div>
+                <div class="fw-semibold">Suleiman Mshimba</div>
+                <small class="text-muted">Founder & Manager</small>
+                <p class="text-muted mt-3">With over a decade of experience in the hardware industry, Suleiman leads our team with a passion for quality and customer satisfaction.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="card h-100 shadow-soft text-center">
+              <div class="card-body">
+                <div class="rounded-circle gradient-hero mx-auto mb-3" style="width:96px;height:96px;"></div>
+                <div class="fw-semibold">Aisha Mshimba</div>
+                <small class="text-muted">Sales & Customer Service</small>
+                <p class="text-muted mt-3">Aisha is dedicated to ensuring every customer finds exactly what they need, providing expert advice and friendly service.</p> 
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="card h-100 shadow-soft text-center">
+              <div class="card-body">
+                <div class="rounded-circle gradient-hero mx-auto mb-3" style="width:96px;height:96px;"></div>
+                <div class="fw-semibold">Juma Mshimba</div>
+                <small class="text-muted">Tool Rental Specialist</small>
+                <p class="text-muted mt-3">Juma manages our rental services, ensuring that all equipment is in top condition and ready for your project needs.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="contact" class="section-pad">
       <div class="container">
         <div class="text-center mb-5">
@@ -467,6 +609,35 @@
           }
         });
       });
+
+      // Close mobile menu when dropdown item is clicked
+      document.querySelectorAll('.dropdown-item').forEach(function(item){
+        item.addEventListener('click', function(){
+          const nav = document.getElementById('navMenu');
+          if(nav && nav.classList.contains('show')){
+            const collapse = bootstrap.Collapse.getOrCreateInstance(nav);
+            collapse.hide();
+          }
+        });
+      });
+
+      // Scroll to top button functionality
+      const scrollToTopBtn = document.getElementById('scrollToTop');
+      if(scrollToTopBtn){
+        // Show/hide button based on scroll position
+        window.addEventListener('scroll', function(){
+          if(window.pageYOffset > 300){
+            scrollToTopBtn.classList.add('show');
+          } else {
+            scrollToTopBtn.classList.remove('show');
+          }
+        });
+        // Scroll to top when clicked
+        scrollToTopBtn.addEventListener('click', function(e){
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
 
       // EmailJS config - replace placeholders with your actual EmailJS credentials
       const EMAILJS_PUBLIC_KEY = 'OArECGOEZkbFH7GAt';
